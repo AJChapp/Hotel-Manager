@@ -1,0 +1,27 @@
+.RoomSearch{
+    text-align: center;
+    justify-content: center;
+}
+.react-calendar__navigation__label{
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+}
+.react-calendar__month-view__weekdays__weekday{
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    
+}
+.react-calendar{
+    margin: auto;
+}
+.input-label-roomSearch{
+    text-align: left;
+    position: relative;
+}
+.react-calendar__tile {
+    font-family: 'Montserrat', sans-serif;
+}
+.selector{
+    max-width: 320px;
+    margin: auto;
+}

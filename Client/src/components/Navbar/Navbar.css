@@ -1,0 +1,11 @@
+.myNav{
+    list-style: none;
+    margin-bottom: 0px;
+}
+.active> a{
+    color: white;
+}
+.nav-link{
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.2em;
+}

@@ -1,0 +1,28 @@
+.Signup{
+    margin: auto;
+    text-align: center;
+    max-width: 800px;
+}
+.inputTitle{
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    right: 15px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.checkIcon{
+    color: #2fe22f;
+    
+}
+.test{
+    position: relative;
+    top: 43px;
+    height: 30px;
+    width: 30px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
