@@ -28,6 +28,9 @@ PassPort(passport);
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/project3'
 mongoose.connect(mongoURI);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./Client/build/index.html"));
+});
 app.listen(PORT, function () {
   console.log(`App running on port ${PORT}!`);
 });
