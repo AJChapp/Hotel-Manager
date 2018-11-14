@@ -5,7 +5,8 @@ const loginRoutes = require('./Routes/user.js')
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require('express-session');
-const PassPort = require('./passport/passport.js')
+const PassPort = require('./passport/passport.js');
+const path = require('path');
 
 // Initialize Express
 const app = express();
