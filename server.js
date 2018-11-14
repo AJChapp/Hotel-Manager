@@ -26,7 +26,7 @@ app.use(passport.session());
 genRoutes(app);
 loginRoutes(app, passport);
 PassPort(passport);
-app.use(express.static('client/public')); 
+app.use(express.static('client/build/public')); 
 
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/project3'
 mongoose.connect(mongoURI);
