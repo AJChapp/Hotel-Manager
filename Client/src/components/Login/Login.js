@@ -39,7 +39,7 @@ class Login extends Component {
     renderRedirect = () => {
 
         if (this.state.loginRedirect) {
-            return <Redirect to='/' />
+            return <Redirect to='/home' />
         }
         else if (this.state.newUserRedirect) {
             return <Redirect to='/signup' />
@@ -91,8 +91,11 @@ class Login extends Component {
                 {this.renderRedirect()}
                 <div className='loginForm'>
                     <Col>
+                    <br/>
                         <Row>
-                            <h2>Login</h2>
+                            <Col>
+                            <h2 className="pageTitle">Login</h2>
+                            </Col>
                         </Row>
                         <Row>
                             <p className='errorMessage'>{this.state.errorMessage}</p>

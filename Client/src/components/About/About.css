@@ -1,0 +1,23 @@
+#AboutUs{
+    background: rgba(255, 255, 255, 0.7);
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+.info{
+    text-align: left;
+    text-indent: 1.5em;
+    padding: 1em;
+}
+.emoji{
+    text-align: center;
+    margin: auto;
+    color: rgb(219, 38, 38);
+    background-color: black;
+    max-width: 150px;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+.emoji:hover{
+    cursor: default;
+}

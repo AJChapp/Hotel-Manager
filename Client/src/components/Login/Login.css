@@ -1,17 +1,23 @@
 .loginPage{
     text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    max-width: 1000px;
+    margin: auto;
+    height: 100%;
 }
 .loginForm{
     max-width: 600px;
-    color: grey;
+    /* color: grey; */
     margin: auto;
+}
+.linkTo{
+    font-weight: 900;
 }
 .linkTo:hover{
     cursor: pointer;
     color: black;
     text-decoration: underline;
-    font-weight: bold;
 }
 .errorMessage{
     color: red;
-}
+} 

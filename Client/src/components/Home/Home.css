@@ -1,0 +1,23 @@
+.homePage{
+    margin: auto;
+    text-align: center;
+}
+#mainPic{
+    width: 100%;
+    padding: 0;
+    position: relative;
+    max-height: 20vh;
+}
+.imgTextHome{
+    position: absolute;
+    color: white;
+    font-size: 5vw;
+    right:25%;
+    top: 3%;
+}
+.imgTextHome p {
+    margin: 0px;
+}
+#homeSubtitle{
+    font-size: .5em
+}

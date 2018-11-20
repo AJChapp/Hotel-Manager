@@ -1,11 +1,18 @@
-.myNav{
-    list-style: none;
-    margin-bottom: 0px;
-}
+
 .active> a{
     color: white;
 }
 .nav-link{
     font-family: 'Inconsolata', monospace;
     font-size: 1.2em;
+}
+#navBrand{
+    color: white;
+}
+.nav-link{
+    color: lightgray;
+}
+#myNav{
+    overflow: hidden;
+    height: 60.8px;
 }

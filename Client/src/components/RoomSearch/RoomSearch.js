@@ -5,7 +5,7 @@ import './RoomSearch.js';
 import './RoomSearch.css'
 import { format } from 'date-fns';
 import { Link } from "react-router-dom";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalFooter, Label, Input, Col} from 'reactstrap';
 
 
 class RoomSearch extends Component {
@@ -97,14 +97,16 @@ class RoomSearch extends Component {
 
     render() {
 
-        return (<div className="RoomSearch">
-            <h4>RoomSearch</h4>
+        return (
+        <Col className="RoomSearch">
+            <h2 className="pageTitle">RoomSearch</h2>
             <Label className="input-label-roomSearch" for="select">Number of Adults</Label>
             <Input className="selector" value={this.state.value} onChange={this.handleChange} type="select" name="select" >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
+                <option>5</option>
             </Input>
             <br/>
             <Calendar onClickDay={(value) => this.setState({ date: value })} selectRange={true} minDate={new Date()} onChange={date => this.setState({ date })} value={this.state.date} />
@@ -120,8 +122,9 @@ class RoomSearch extends Component {
                     <Button color="secondary" onClick={this.toggle}>{this.state.rooms.length === 0 ? 'Close' : 'Not Now'}</Button>
                 </ModalFooter>
             </Modal>
-
-        </div>)
+            <br/>
+            <br/>
+        </Col>)
     }
 }
 

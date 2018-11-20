@@ -1,8 +1,33 @@
 h1,h2,h3,h4,h5,h6{
     font-family: 'Inconsolata', monospace;
-
+}
+html{
+    height: 100%;
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    
+    height: 100%;
+    background-image: url('./components/Home/img/download.jpg');
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+#root{
+    height: 100%;
+}
+#notRoot{
+    height: 100%;
+}
+#navSpace{
+    height: 60.8px;
+    width: 100%;
+}
+.pageTitle{
+    color: black;
+    font-weight: bold;
+}
+#allComponents{
+    /* height: 100%; */
+    position: relative;
+    top: 60.8px;
 }

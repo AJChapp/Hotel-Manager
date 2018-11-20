@@ -1,6 +1,9 @@
 .RoomSearch{
     text-align: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    max-width: 1000px;
+    margin: auto;
 }
 .react-calendar__navigation__label{
     font-family: 'Inconsolata', monospace;
@@ -16,7 +19,7 @@
 }
 .input-label-roomSearch{
     text-align: left;
-    position: relative;
+    position: relative; 
 }
 .react-calendar__tile {
     font-family: 'Montserrat', sans-serif;

@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
-const db = require('../models')
+const db = require('../models');
+//local
+// mongoose.connect('mongodb://localhost/project3')
 
-mongoose.connect('mongodb://localhost/project3')
+mongoose.connect('mongodb://heroku_r4z8zrzt:99gtgislo0s2kkqfrgvqumvfbl@ds161183.mlab.com:61183/heroku_r4z8zrzt')
 const roomSeed = [
   {
     roomNumber: 200,
     booked: [
       "11/03/2018",
-      "11/04/2018"
+      "11/13/2018"
     ],
     maxAdult: 5,
     nonSmoking: true,

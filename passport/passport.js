@@ -15,6 +15,7 @@ module.exports = (passport) => {
         function (req, email, password, cb) {
             db.User.findOne({ email: email }, function (error, users) {
                 if(!users){
+                    console.log('no find')
                     return cb(null, false,{ message: 'Incorrect username.' })//added
                 }
                 return cb(null, users)

@@ -1,4 +1,14 @@
 .arrow:hover{
     cursor: pointer;
 }
-
+th{
+    white-space: nowrap;
+}
+.bookIt{
+    background: rgba(255, 255, 255, 0.7);
+    max-width: 1000px;
+    margin: auto;
+}
+.bookingTable{
+    margin: auto;
+}

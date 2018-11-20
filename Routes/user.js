@@ -10,6 +10,20 @@ module.exports = function (app, passport) {
         console.log(res)
         res.json({ success: true, user: req.user })
     });
+
+    //checks if email is in database
+    app.post('/api/user/email', function (req, res) {
+        db.User.findOne(req.body).then((response) => {
+            console.log(response)
+            if (response) {
+                res.json({success:false})
+            }
+            else {
+                
+                res.json({ success: true })
+            }
+        })
+    })
     //logout
     app.get('/api/user/logout', function (req, res) {
         req.logout();
@@ -25,8 +39,10 @@ module.exports = function (app, passport) {
         }
     })
 
-    // // NEEDS NEW ROUTE
-    app.post("/newuser", function (req, res) {
+
+
+    //newUser
+    app.post("/api/newuser", function (req, res) {
 
         const newUser = {
             firstName: req.body.firstName,
@@ -35,13 +51,16 @@ module.exports = function (app, passport) {
             password: req.body.password,
             phoneNumber: req.body.phoneNumber,
         }
-        
+
         // Encryption
         bcrypt.genSalt(10, function (err, salt) {
             bcrypt.hash(newUser.password, salt, function (err, hash) {
                 // Store hash in your password DB.
                 newUser.password = hash
-                db.User.create(newUser).then((response) => res.json(response));
+                db.User.create(newUser).then((response) => res.json({
+                    success: true,
+                    response
+                }));
             }); // bcrypt.hash
         }); // bcrypt.genSalt
     }); // app.post

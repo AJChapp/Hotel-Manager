@@ -18,6 +18,15 @@ export default {
     },
     login:(data) =>{
         return axios.post('/api/user/login', data)
+    },
+    signup: (data)=>{
+        return axios.post('/api/newuser', data)
+    },
+    checkEmail: (data)=>{
+        return axios.post('/api/user/email', data)
+    },
+    logOut:()=>{
+        return axios.get('/api/user/logout')
     }
 
 
