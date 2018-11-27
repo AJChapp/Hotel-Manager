@@ -15,9 +15,9 @@ class About extends Component {
                     <Row>
                         <p className="info">
                             My name is Andrew and I am the designer of this website. The purpose of this website is to showcase some of my coding abilities.
-                            (not my design (￣ω￣)) This site is desgined to be what a user would see when booking a hotel.
+                             This site is desgined to be what a user would see when booking a hotel.
                              The reason I chose to do this was because I wanted my demo site to have real world application.
-                             I hope you enjoy it.
+                             I hope you enjoy it. 
                         </p>
                     </Row>
                     <Row className="emoji">

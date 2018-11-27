@@ -28,7 +28,7 @@ class Navbarr extends Component {
                 <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className='ml-auto'>
 
-                    <NavItem className={window.location.pathname === "/"
+                    <NavItem className={window.location.pathname === "/" || "/home"
                         ? "nav-item active"
                         : "nav-item"}>
                     

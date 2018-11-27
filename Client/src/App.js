@@ -9,6 +9,7 @@ import RoomSearch from './components/RoomSearch/RoomSearch.js';
 import BookIt from './components/BookIt/BookIt.js'
 import Profile from './components/Profile/Profile.js';
 import Signup from './components/Signup/Signup.js';
+import BookingSuccess from './components/BookingSuccess/BookingSuccess.js';
 class App extends Component {
   state = {
     roomsToBook: [],
@@ -27,7 +28,7 @@ class App extends Component {
     this.setState({ user })
   }
 
-  
+
 
   render() {
     return (
@@ -39,9 +40,10 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/success" component={BookingSuccess} />
             {
               this.state.user ?
-                <Route exact path="/profile" render={(props) => <Profile {...props} loginLifter={this.loginLifter} user={this.state.user} />}/>
+                <Route exact path="/profile" render={(props) => <Profile {...props} loginLifter={this.loginLifter} user={this.state.user} />} />
                 :
                 <Route exact path="/login" render={(props) => <Login {...props} datesToBook={this.state.datesToBook} loginLifter={this.loginLifter} />} />
             }

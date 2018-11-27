@@ -3,9 +3,9 @@ import RoomTD from './RoomTD/RoomTD.js';//table = td
 import { Table, Col,Row } from 'reactstrap';
 import './BookIt.css';
 class BookIt extends Component {
-
+ 
     state = {
-        roomsToBook: this.props.roomsToBook
+        roomsToBook: this.props.roomsToBook,
     }
 
     sortByRateAscending = () => {

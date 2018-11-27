@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col } from 'reactstrap';
 import { Link } from "react-router-dom";
+import { Redirect } from 'react-router'
 import API from '../../../utils/API.js';
 import './RoomTD.css';
 
@@ -10,7 +11,8 @@ class RoomLG extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false
+            modal: false,
+            successRedirect: false
         };
 
         this.toggle = this.toggle.bind(this);
@@ -22,17 +24,29 @@ class RoomLG extends Component {
         });
     }
 
+    redirector=()=>{
+        this.setState({
+            successRedirect:true
+        })
+    }
+
     bookDates = () => {
 
         API.addBooking(this.props.postObj).then((response) => {
             if(response.status===200){
-                
-                // Put Redirect here
-                this.toggle()
+                // this.toggle()
+                this.redirector()
             }
         }).catch((err)=>{
             console.log(err)
         })
+    }
+
+    renderRedirect = () => {
+
+        if (this.state.successRedirect) {
+            return <Redirect to='/success' />
+        }
     }
 
 
@@ -40,6 +54,7 @@ class RoomLG extends Component {
 
         return (
             <tr>
+                {this.renderRedirect()}
                 <th>${this.props.roomInfo.rate}</th>
                 <th>{this.props.roomInfo.maxAdult}</th>
                 <th>{this.props.roomInfo.squareFt} ft.</th>
