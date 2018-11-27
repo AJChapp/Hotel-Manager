@@ -26,6 +26,7 @@ class RoomLG extends Component {
 
         API.addBooking(this.props.postObj).then((response) => {
             if(response.status===200){
+                
                 // Put Redirect here
                 this.toggle()
             }

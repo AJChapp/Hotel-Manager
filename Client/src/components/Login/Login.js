@@ -78,8 +78,8 @@ class Login extends Component {
                 password: this.state.password
             }).then((response) => {
                 if (response.data.success) {
-                    this.props.loginLifter(response.data.user)
                     this.setRedirect('login')
+                    this.props.loginLifter(response.data.user)
                 }
             })
         }

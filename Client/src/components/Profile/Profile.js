@@ -18,11 +18,10 @@ class Profile extends Component {
 
     handleLogout = () => {
         API.logOut().then((response) => {
-            console.log(response)
-            this.props.loginLifter("")
             this.setState({
                 redirect: true
             })
+            this.props.loginLifter("")
         })
     }
 
