@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import './Profile.css';
-import { Col, Row, Button } from 'reactstrap';
+import { Col, Row, Button, Container } from 'reactstrap';
 import API from '../../utils/API.js';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
+import BookingCard from './BookingCard/BookingCard.js';
 
 class Profile extends Component {
 
     state = {
         redirect: false,
+        userBookings: []
+    }
+
+    componentDidMount() {
+        API.userBooking().then((res) => {
+            this.setState({
+                userBookings: res.data
+            })
+        })
     }
 
     renderRedirect = () => {
@@ -35,15 +45,26 @@ class Profile extends Component {
                             <h2 className="pageTitle">My Account</h2>
                         </Col>
                     </Row>
-    
-                    <Row>
-                        <Col className="userInfo">
-                            <h5 className = "userPiece_head">First Name: <span className = "userPiece_body">{this.props.user.firstName}</span></h5>
-                            <h5 className = "userPiece_head">Last Name: <span className = "userPiece_body">{this.props.user.lastName}</span></h5>
-                            <h5 className = "userPiece_head">Email: <span className = "userPiece_body">{this.props.user.email}</span></h5>
-                            <h5 className = "userPiece_head">Phone Number: <span className = "userPiece_body">{this.props.user.phoneNumber}</span></h5>
-                        </Col>
-                    </Row>
+                    {
+                        this.state.userBookings.length > 0 ?
+                            <div>
+                                <Row>
+                                    <Col>
+                                        <h4 className="userPiece_head">Active Bookings:</h4>
+                                    </Col>
+                                </Row>
+
+                                <Container className="activeBookings clearfix" fluid>
+                                    {this.state.userBookings.map((part, index) => {
+                                        return (
+                                            <BookingCard key={index} roomNumber={part.roomNumber} datesToBook={part.datesToBook} index={index} />
+                                        )
+                                    })}
+                                </Container>
+                            </div>
+                            :
+                            ""
+                    }
                     <br />
                     <Row>
                         <Col>

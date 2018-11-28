@@ -12,7 +12,8 @@ class RoomLG extends Component {
         super(props);
         this.state = {
             modal: false,
-            successRedirect: false
+            successRedirect: false,
+            disableButton: false,
         };
 
         this.toggle = this.toggle.bind(this);
@@ -31,11 +32,16 @@ class RoomLG extends Component {
     }
 
     bookDates = () => {
-
+        this.setState({
+            disableButton:true
+        })
         API.addBooking(this.props.postObj).then((response) => {
             if(response.status===200){
-                // this.toggle()
-                this.redirector()
+                API.addUserBooking(this.props.postObj).then((userRes)=>{
+                    if(userRes.data.success){
+                        this.redirector()
+                    }
+                })
             }
         }).catch((err)=>{
             console.log(err)
@@ -82,7 +88,7 @@ class RoomLG extends Component {
                         </Row>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success" onClick={this.bookDates}>Book It</Button>{' '}
+                        <Button color="success" disabled={this.state.disableButton} onClick={this.bookDates}>Book It</Button>{' '}
                         <Button color="danger" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

@@ -19,10 +19,6 @@ const RoomsSchema = new Schema({
         twin: Number,
         rollaway:Number
     },
-    User: [{
-        type: Schema.Types.ObjectId,
-        ref: "User"
-      }]
 });
 
 const Rooms = mongoose.model('Rooms', RoomsSchema);

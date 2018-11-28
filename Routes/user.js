@@ -12,10 +12,10 @@ module.exports = function (app, passport) {
     app.post('/api/user/email', function (req, res) {
         db.User.findOne(req.body).then((response) => {
             if (response) {
-                res.json({success:false})
+                res.json({ success: false })
             }
             else {
-                
+
                 res.json({ success: true })
             }
         })
@@ -32,6 +32,35 @@ module.exports = function (app, passport) {
         }
         else {
             res.json(false)
+        }
+    })
+
+    app.post('/api/user/booking', function (req, res) {
+        // console.log(req.user._id)
+        // console.log(req.body)
+        db.User.update(
+            { _id: req.user._id },
+            { $addToSet: { booking: req.body } }
+        ).then((data) => {
+            // console.log(data)
+            res.json({ success: true })
+        }).catch((err) => {
+            res.json(err)
+        })
+    })
+
+    app.get('/api/user/data', function (req, res) {
+        if (!req.user) {
+            res.json('LogIn')
+        }
+        else if (req.user) {
+            db.User.findOne({ _id: req.user._id }
+                ).then((data)=>{
+                    console.log(data.booking)
+                    res.json(data.booking)
+                }).catch((err)=>{
+                    res.json(err)
+                })
         }
     })
 

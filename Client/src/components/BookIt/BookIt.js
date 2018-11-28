@@ -66,7 +66,7 @@ class BookIt extends Component {
                         </thead>
                         <tbody className="bookingTable-body">
                             {this.props.roomsToBook.map((part, index) => {
-                                return <RoomTD user={this.props.user} postObj={{ roomNumber: part.roomNumber, datesToBook: this.props.datesToBook, user: this.props.user._id }} datesToBook={this.props.datesToBook} key={index} index={index} roomInfo={part} />
+                                return <RoomTD user={this.props.user} postObj={{ roomNumber: part.roomNumber, datesToBook: this.props.datesToBook }} datesToBook={this.props.datesToBook} key={index} index={index} roomInfo={part} />
                             })}
                         </tbody>
                     </Table>

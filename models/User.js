@@ -7,7 +7,10 @@ const UserSchema = new Schema({
     phoneNumber: String,
     email: String,
     password: String,
-    bookingDates: [String]
+    booking:[{
+        roomNumber:Number,
+        datesToBook: [String],
+    }],
 });
 
 const User = mongoose.model('User', UserSchema);

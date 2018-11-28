@@ -16,6 +16,9 @@ export default {
         // must be array
         return axios.post('/booking/api', data)
     },
+    addUserBooking: (data)=>{
+        return axios.post('/api/user/booking',data)
+    },
     login:(data) =>{
         return axios.post('/api/user/login', data)
     },
@@ -27,7 +30,11 @@ export default {
     },
     logOut:()=>{
         return axios.get('/api/user/logout')
+    },
+    userBooking:()=>{
+        return axios.get('/api/user/data')
     }
+
 
 
 }
