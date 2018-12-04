@@ -23,7 +23,7 @@ class Navbarr extends Component {
         return (
             
             <Navbar id="myNav" fixed='top' expand='md' dark={true} color='dark'>
-                <NavbarBrand id="navBrand">Hotel Manager</NavbarBrand>
+                <NavbarBrand id="navBrand">Riverside Resort</NavbarBrand>
                 <NavbarToggler className='navbarToggler' onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className='ml-auto'>
