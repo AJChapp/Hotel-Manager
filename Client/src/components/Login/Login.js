@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { Button, InputGroup, InputGroupAddon, Input, Row, Col } from 'reactstrap';
+import { Button, InputGroup, InputGroupAddon, Input, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import API from '../../utils/API.js';
 import { Redirect } from 'react-router'
 
 class Login extends Component {
 
-    state = {
-        password: "",
-        email: "",
-        loginRedirect: false,
-        newUserRedirect: false,
-        errorMessage: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false,
+            password: "",
+            email: "",
+            loginRedirect: false,
+            newUserRedirect: false,
+            errorMessage: ''
+        };
+
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
     }
 
     setRedirect = (target) => {
@@ -77,10 +89,14 @@ class Login extends Component {
                 email: this.state.email,
                 password: this.state.password
             }).then((response) => {
-                if (response.data.success) {
+                console.log(response)
+                if (response.status===200) {
                     this.setRedirect('login')
                     this.props.loginLifter(response.data.user)
                 }
+            }).catch((response)=>{
+                this.toggle();
+                console.log('caught')
             })
         }
     }
@@ -91,10 +107,10 @@ class Login extends Component {
                 {this.renderRedirect()}
                 <div className='loginForm'>
                     <Col>
-                    <br/>
+                        <br />
                         <Row>
                             <Col>
-                            <h2 className="pageTitle">Login</h2>
+                                <h2 className="pageTitle">Login</h2>
                             </Col>
                         </Row>
                         <Row>
@@ -121,6 +137,15 @@ class Login extends Component {
                         <p className='linkTo' onClick={() => this.setRedirect('newUser')}>Click here to sign up</p>
                     </Col>
                 </div>
+                <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                    <ModalHeader toggle={this.toggle}>Login Failed</ModalHeader>
+                    <ModalBody>
+                        Please  check email and password and try again.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="secondary" onClick={this.toggle}>Close</Button>
+                    </ModalFooter>
+                </Modal>
             </div>
         )
     }

@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app, passport) {
     // Process the login form
     app.post('/api/user/login', passport.authenticate("local"), function (req, res) {
-        res.json({ success: true, user: req.user })
+        res.json({ user: req.user })
     });
 
     //checks if email is in database
