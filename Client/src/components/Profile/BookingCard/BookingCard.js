@@ -9,16 +9,16 @@ class BookingCard extends Component {
     render() {
         return (
                 <Card className="activeBookingCard">
-                    <CardHeader>
-                        Room Number: {this.props.roomNumber}
-                    </CardHeader>
-                    <CardBody>
-                        <CardTitle>
-                            Dates Booked:
-                        </CardTitle>
-                        <CardText>
+                    <CardHeader className="roomNumber-card">
                             {this.props.datesToBook[0]} -
                         {this.props.datesToBook[this.props.datesToBook.length - 1]}
+                    </CardHeader>
+                    <CardBody className="cardBody-card">
+                        <CardTitle className="datesTitle-card">
+                        Room Info
+                        </CardTitle>
+                        <CardText className="dates-card">
+                        Room Number: {this.props.roomNumber}
                         </CardText>
                     </CardBody>
                 </Card>

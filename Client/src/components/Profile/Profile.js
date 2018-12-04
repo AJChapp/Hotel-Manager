@@ -54,7 +54,7 @@ class Profile extends Component {
                                     </Col>
                                 </Row>
 
-                                <Container className="activeBookings clearfix" fluid>
+                                <Container className="activeBookings" fluid>
                                     {this.state.userBookings.map((part, index) => {
                                         return (
                                             <BookingCard key={index} roomNumber={part.roomNumber} datesToBook={part.datesToBook} index={index} />

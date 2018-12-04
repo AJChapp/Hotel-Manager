@@ -1,5 +1,22 @@
 .activeBookingCard{
-    margin: 5px;;
-    width: 300px;
-    float: left;
+    margin: 5px;
+    width: 250px;
+    display: inline-block;
+}
+
+/* .cardBody-card{
+} */
+
+.roomNumber-card{
+    font-size: 100%;
+    font-weight: 900;
+}
+.datesTitle-card{
+    font-size: 120%;
+    font-weight: 900;
+    
+}
+.dates-card{
+    font-size: 100%;
+            
 }
