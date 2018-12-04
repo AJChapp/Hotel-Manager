@@ -55,6 +55,7 @@ class Profile extends Component {
                                 </Row>
 
                                 <Container className="activeBookings" fluid>
+                                
                                     {this.state.userBookings.map((part, index) => {
                                         return (
                                             <BookingCard key={index} roomNumber={part.roomNumber} datesToBook={part.datesToBook} index={index} />
@@ -63,7 +64,7 @@ class Profile extends Component {
                                 </Container>
                             </div>
                             :
-                            ""
+                            <h4>No Bookings</h4>
                     }
                     <br />
                     <Row>
